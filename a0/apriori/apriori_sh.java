@@ -3,11 +3,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class AprioriAlgorithm {
+public class apriori_sh {
     private List<List<String>> transactions;
     private Map<Set<String>, Integer> itemsets;
 
-    public AprioriAlgorithm() {
+    public apriori_sh() {
         transactions = new ArrayList<>();
         itemsets = new HashMap<>();
     }
@@ -105,14 +105,14 @@ public class AprioriAlgorithm {
 
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Usage: java AprioriAlgorithm <input_file_name.csv> <minimum_support>");
+            System.out.println("Usage: java apriori_sh <input_file_name.csv> <minimum_support>");
             return;
         }
 
         String inputFile = args[0];
         double minSupport = Double.parseDouble(args[1]);
 
-        AprioriAlgorithm apriori = new AprioriAlgorithm();
+        apriori_sh apriori = new apriori_sh();
         try {
             apriori.loadTransactionsFromCSV(inputFile);
             apriori.generateFrequentItemsets(minSupport); // Minimum support
