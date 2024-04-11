@@ -4,6 +4,7 @@ a1/data contains "g13_processed_12k.csv", transaction dataset.
 
 
 implementation example(e.g. ubuntu shell):
+'''console
 > java A1_G13_t1 ../data/g13_processed_12k.csv 0.03
 Maze Pen 0.030750
 Google Metallic Notebook Set 0.030833
@@ -19,3 +20,4 @@ Google Twill Cap 0.044667
 Google 22 oz Water Bottle 0.056083
 Google Sunglasses 0.056583
 Google Laptop and Cell Phone Stickers 0.065583
+'''
