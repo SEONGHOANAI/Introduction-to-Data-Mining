@@ -1,10 +1,9 @@
+# Apriori algorithm
 a1/apriori contains "A1_G13_t1.java", implementation of apriori algorithm.
 
-a1/data contains "g13_processed_12k.csv", transaction dataset.
+## run example in ubuntu shell
 
-
-implementation example(e.g. ubuntu shell):
-'''console
+'''
 > java A1_G13_t1 ../data/g13_processed_12k.csv 0.03
 Maze Pen 0.030750
 Google Metallic Notebook Set 0.030833
@@ -21,3 +20,5 @@ Google 22 oz Water Bottle 0.056083
 Google Sunglasses 0.056583
 Google Laptop and Cell Phone Stickers 0.065583
 '''
+# Dataset
+a1/data contains "g13_processed_12k.csv", transaction dataset.
