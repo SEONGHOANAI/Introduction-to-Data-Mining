@@ -1,7 +1,7 @@
 import numpy as np
 import pandas
 
-dataset = pandas.read_csv("g13.csv")
+dataset = pandas.read_csv("./data/g13.csv")
 dataset = dataset.drop(columns=["transaction_id"])
 
 dataset_processed = []
@@ -18,6 +18,6 @@ np.random.shuffle(dataset_processed)
 
 for i in range(1, 13):
     _i = i * 1000
-    f = open("g13_processed.csv_" + str(i) + "k", "w")
+    f = open("./data/g13_processed_" + str(i) + "k.csv", "w")
     for row in dataset_processed[0:_i]:
         f.write(",".join(row) + "\n")
