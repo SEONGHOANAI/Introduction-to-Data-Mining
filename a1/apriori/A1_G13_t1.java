@@ -49,16 +49,18 @@ public class A1_G13_t1 {
         while (!itemset.isEmpty()) {
             freqitemsets.addAll(itemset);
             frequencies.addAll(frequency);
-
+            // candidate generation
             List<List<String>> candidates = apriori_gen(itemset);
             int[] counts = new int[candidates.size()];
             if (!candidates.isEmpty()) {
+                // hashed candidates
                 HashMap<List<String>, Integer> hashed = new HashMap<>();
                 for (int i = 0; i < candidates.size(); i++) {
                     hashed.put(candidates.get(i), i);
                 }
                 for (List<String> t: database) {
                     List<List<String>> subsets = subset_gen(t, candidates.get(0).size());
+                    // for each subset of the transaction, count if it exists in the candidates
                     for(List<String> subset: subsets) {
                         if(hashed.containsKey(subset)) counts[hashed.get(subset)]++;
                     }
@@ -75,23 +77,23 @@ public class A1_G13_t1 {
             }
         }
         /*==========ordered frequent itemset==========*/
-        HashMap<Integer, List<String>> ordered = new HashMap<>();
+        HashMap<List<String>, Integer> ordered = new HashMap<>();
         for (int i = 0; i < freqitemsets.size(); i++) {
-            ordered.put(frequencies.get(i), freqitemsets.get(i));
+            ordered.put(freqitemsets.get(i), frequencies.get(i));
         }
-        List<HashMap.Entry<Integer, List<String>>> orderedList= new LinkedList<>(ordered.entrySet());
+        List<HashMap.Entry<List<String>, Integer>> orderedList= new LinkedList<>(ordered.entrySet());
         // sorted item list
-        orderedList.sort(HashMap.Entry.comparingByKey());
+        orderedList.sort(HashMap.Entry.comparingByValue());
         /*==========displaying the result==========*/
-        for (HashMap.Entry<Integer, List<String>> it: orderedList) {
-            int s = it.getValue().size();
+        for (HashMap.Entry<List<String>, Integer> it: orderedList) {
+            int s = it.getKey().size();
             for (int i = 0; i < s; i++) {
-                System.out.print(it.getValue().get(i));
+                System.out.print(it.getKey().get(i));
                 if (i < s-1) {
                     System.out.print(", ");
                 }
             }
-            System.out.println(" " + String.format("%.6f", (double) it.getKey()/transaction_num));
+            System.out.println(" " + String.format("%.6f", (double) it.getValue()/transaction_num));
         }
     }
     public static List<List<String>> apriori_gen(List<List<String>> itemsets) {
@@ -130,6 +132,7 @@ public class A1_G13_t1 {
         return pruned;
     }
     public static List<String> get_prefix(List<String> itemset) {
+        // returns prefix of the itemset
         if (itemset.size() != 1) {
             return new LinkedList<>(itemset.subList(0, itemset.size()-1));
         }
@@ -137,6 +140,7 @@ public class A1_G13_t1 {
             return new LinkedList<>();
         }
     }
+    // l-size subset generation function from the set
     public static List<List<String>> subset_gen(List<String> set, int l) {
         List<List<String>> subsets = new LinkedList<>();
         List<String> start = new LinkedList<>();
