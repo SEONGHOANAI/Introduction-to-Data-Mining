@@ -14,7 +14,10 @@ for index, row in dataset.iterrows():
             row_processed.append(column)
     dataset_processed.append(row_processed)
 
+np.random.shuffle(dataset_processed)
 
-f = open("g13_processed.csv", "w")
-for row in dataset_processed:
-    f.write(",".join(row) + "\n")
+for i in range(1, 13):
+    _i = i * 1000
+    f = open("g13_processed.csv_" + str(i) + "k", "w")
+    for row in dataset_processed[0:_i]:
+        f.write(",".join(row) + "\n")
