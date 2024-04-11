@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Stream;
 
-public class A1_G13_t1_r {
+public class A1_G13_t1 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader file = new BufferedReader(new FileReader(args[0]));
