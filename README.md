@@ -1,5 +1,5 @@
 # Apriori algorithm
-"a1/apriori" contains "A1_G13_t1.java", implementation of apriori algorithm.
+"A1_G13_t1.java", implementation of apriori algorithm.
 
 ## run example in ubuntu shell
 
@@ -20,5 +20,8 @@ Google 22 oz Water Bottle 0.056083
 Google Sunglasses 0.056583
 Google Laptop and Cell Phone Stickers 0.065583
 ```
+# FP-growth algorithm
+"A1_G13_t2.java", implementation of FP-growth algorithm.
+
 # Dataset
-"a1/data" contains "g13_processed_12k.csv", transaction dataset.
+"data" contains "g13_processed_12k.csv", transaction dataset.
