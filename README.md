@@ -4,7 +4,7 @@
 ## run example in ubuntu shell
 
 ```
-> java A1_G13_t1 ../data/g13_processed_12k.csv 0.03
+> java A1_G13_t1 ./data/g13_processed_12k.csv 0.03
 Maze Pen 0.030750
 Google Metallic Notebook Set 0.030833
 Windup Android 0.031250
