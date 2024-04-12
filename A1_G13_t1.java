@@ -93,7 +93,7 @@ public class A1_G13_t1 {
                     System.out.print(", ");
                 }
             }
-            System.out.println(" " + String.format("%.6f", (double) it.getValue()/transaction_num));
+            System.out.println(" " + String.format("%.8f", (double) it.getValue()/transaction_num));
         }
     }
     public static List<List<String>> apriori_gen(List<List<String>> itemsets) {
